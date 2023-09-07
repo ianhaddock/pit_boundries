@@ -1,5 +1,5 @@
-# Simview Pit Boundies
-Pit boundies files for the [Simview][1] plugin for Assetto Corsa.
+# Simview Pit Boundaries
+Pit boundry files for the [Simview][1] plugin for Assetto Corsa.
 
 These files contain only coordinates and no other content related to Assetto Corsa.
 
@@ -7,7 +7,7 @@ These files contain only coordinates and no other content related to Assetto Cor
 
 * download the zip: 
 ```
-wget https://github.com/ianhaddock/pit_boundries/archive/refs/heads/main.zip 
+wget https://github.com/ianhaddock/simview_pit_boundaries/archive/refs/heads/main.zip 
 ```
 * move tracks folder to the simview cache directory
 * restart simview http
