@@ -3,7 +3,7 @@
 
 @ECHO OFF
 
-TITLE 'Generate Simview Files'
+TITLE 'Simview Cache Tool'
 
 :: use local vars
 setlocal
@@ -30,11 +30,10 @@ set /a "path_prefix=%len%+15"
 set "simview_tracks_path=%assetto_base_path%\content\tracks"
 set "simview_cars_path=%assetto_base_path%\content\cars"
 
-
 :: usage
 ECHO:
 echo This script will build a simview_cache folder with:
-echo    (1) SimViewTool.exe geneerated pit boundaries files
+echo    (1) SimViewTool.exe generated pit boundaries files
 echo    (2) simview formatted car badge files.
 echo:
 echo You can optionally pass non standard install paths to the script:
@@ -87,7 +86,6 @@ for /R %simview_cars_path% %%a in (ui\badge.png) do ( call :makebadge "%%a", %pa
 echo Done.
 pause
 exit/B 0
-
 
 :makebadge
     set car_path=%1
