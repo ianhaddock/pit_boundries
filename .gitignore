@@ -1,3 +1,9 @@
 # git ignore
 
 .DS_Store
+
+SimViewTool.exe
+
+simview_cache
+
+test*
