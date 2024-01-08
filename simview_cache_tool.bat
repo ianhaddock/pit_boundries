@@ -18,7 +18,7 @@ set "assetto_base_path=C:\PROGRA~2\Steam\steamapps\common\assettocorsa"
 :: use custom path if passed to script and valid
 set ac_user_path=%~1
 if exist "%ac_user_path%" ( 
-    set "assetto_base_path=%ac_user_path%"
+    set assetto_base_path="%ac_user_path%"
     ) 
 
 :: get length of assetto corsa base path
@@ -74,14 +74,21 @@ if not exist %dest_tracks% ( mkdir %dest_tracks% )
 :: check for badges destination folder
 if not exist %dest_badge% ( mkdir %dest_badge% )
 
-:: generate pit boundaries
-SimViewTool.exe %simview_tracks_path%
+if exist %simview_tracks_path% (
+    :: generate pit boundaries
+    SimViewTool.exe %simview_tracks_path%
+    :: move generated pb files to simview_cache\tracks folder
+    for /R %simview_tracks_path% %%a in (*.pb) do move /Y "%%a" "%dest_tracks%"
+) else (
+    echo Tracks directory not found. Skipping.
+)
 
-:: move generated pb files to simview_cache\tracks folder
-for /R %simview_tracks_path% %%a in (*.pb) do move /Y "%%a" "%dest_tracks%"
-
-:: search for badge images in cars directories
-for /R %simview_cars_path% %%a in (ui\badge.png) do ( call :makebadge "%%a", %path_prefix% )
+if exist %simview_cars_path% (
+    :: search for badge images in cars directories
+    for /R %simview_cars_path% %%a in (ui\badge.png) do ( call :makebadge "%%a", %path_prefix% )
+) else (
+    echo Cars directory not found. Skipping.
+)
 
 echo Done.
 pause

@@ -1,18 +1,27 @@
 # Simview Cache Tool
-This batch file simplifies generating pit boundary files and car badge files used by the [Simview][1] plugin for Assetto Corsa. This is useful if you are running an Assetto Corsa game server and do not want to upload upload large KN5 track files or entire car folders just for Simview.  
+This batch script simplifies generating pit boundary files and car badge files used by the [Simview][1] plugin for Assetto Corsa. These files replace the need to upload large KN5 track files and entire car folders.  
 
-This script is provided AS IS with no warrantee expressed or implied. Use at your own risk.
+The script scans the Steam install location for Assetto Corsa by default or you can pass a path to it. This is useful if you have a large tracks folder and SimViewTool.exe runs out of memory parsing it, or you want to scan just the subset of tracks used on your server. 
+
+The path submitted should end with 'assettocorsa' and contain '/content/tracks' and '/content/cars' subfolders. See usage below.
+
+This script is provided AS IS with no warranty expressed or implied. Use at your own risk.
 
 ### Requirements
-* Windows machine with a local installation of Assetto Corsa
+* Windows machine with a local installation of Assetto Corsa.
 * SimViewTool.exe placed in the same location as the script, which can be [downloaded here][1].
 
 ### How to run
-* Download the batch file
-* Download [Simview][1] and extract the SimViewTool.exe into the same location as the batch file.
-* Run the batch file.
+* Download a copy of this repo.
+* Download [Simview][1] and extract the SimViewTool.exe into the same location as the batch script.
+* Double click to start or open a cmd window and run it.
 
-A simview_cache folder will be created, the SimViewTool.exe will generate pit boundary files, and the script will format car badge.png files for use with simview. When complete you will have: 
+### What will happen
+* SimViewTool.exe will generate pit boundary files. Press enter when it finishes to continue.
+* Those pit boundary files (*.pb) will be moved to simview_cache/tracks.
+* Car badge.png image files will be copied to simview_cache/cars and formatted for simview. 
+
+When complete you will see: 
 
 ```
 > tree /F 
@@ -39,11 +48,9 @@ C:.
             <snip>
 ```
 
-Optionally: you can pass the script non standard Assetto Corsa installation paths in quotes. See usage.
-
-### How to install files on game server 
-* move created simview_cache content to your simview installation's cache directory
-* update file permissions as needed
+### How to install
+* Move the simview_cache content to your server's simview cache directory
+* Update file permissions as needed
 
 Simview will immediately start using the files, no restart required.
 
@@ -52,12 +59,12 @@ Simview will immediately start using the files, no restart required.
 > .\simview_cache_tool.bat
 
 This script will build a simview_cache folder with:
-   (1) SimViewTool.exe geneerated pit boundaries files
+   (1) SimViewTool.exe generated pit boundaries files
    (2) simview formatted car badge files.
 
 You can optionally pass non standard install paths to the script:
  .\generate_simview_files.bat "D:\path\to\assettocorsa"
-NOTE: do not include the trailing slash in custom paths.
+NOTE: do not include a trailing slash in custom paths.
 
 Path selected: C:\PROGRA~2\Steam\steamapps\common\assettocorsa
 
