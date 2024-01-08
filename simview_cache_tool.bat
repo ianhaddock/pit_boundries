@@ -31,12 +31,12 @@ set "simview_tracks_path=%assetto_base_path%\content\tracks"
 set "simview_cars_path=%assetto_base_path%\content\cars"
 
 :: usage
-ECHO:
-echo This script will build a simview_cache folder with:
-echo    (1) SimViewTool.exe generated pit boundaries files
-echo    (2) simview formatted car badge files.
 echo:
-echo You can optionally pass non standard install paths to the script:
+echo This script will build a simview_cache folder with:
+echo    (1) SimViewTool.exe generated pit boundary files 
+echo    (2) simview formatted car badge image files
+echo:
+echo You can optionally pass a path to the script when run:
 echo  .\generate_simview_files.bat "D:\path\to\assettocorsa"
 echo NOTE: do not include the trailing slash in custom paths.
 echo:

@@ -1,7 +1,7 @@
 # Simview Cache Tool
 This batch script simplifies generating pit boundary files and car badge files used by the [Simview][1] plugin for Assetto Corsa. These files replace the need to upload large KN5 track files and entire car folders.  
 
-The script scans the Steam install location for Assetto Corsa by default or you can pass a path to it. This is useful if you have a large tracks folder and SimViewTool.exe runs out of memory parsing it, or you want to scan just the subset of tracks used on your server. 
+The script scans the Steam install location for Assetto Corsa by default or you can pass a path to it. This is useful if you have a large tracks folder and SimViewTool.exe runs out of memory parsing it, or you want to scan just the subset of tracks and cars used on your server. 
 
 The path submitted should end with 'assettocorsa' and contain '/content/tracks' and '/content/cars' subfolders. See usage below.
 
@@ -59,12 +59,12 @@ Simview will immediately start using the files, no restart required.
 > .\simview_cache_tool.bat
 
 This script will build a simview_cache folder with:
-   (1) SimViewTool.exe generated pit boundaries files
-   (2) simview formatted car badge files.
+   (1) SimViewTool.exe generated pit boundary files
+   (2) simview formatted car badge image files
 
-You can optionally pass non standard install paths to the script:
+You can optionally pass a path to the script when run:
  .\generate_simview_files.bat "D:\path\to\assettocorsa"
-NOTE: do not include a trailing slash in custom paths.
+NOTE: do not include the trailing slash in custom paths.
 
 Path selected: C:\PROGRA~2\Steam\steamapps\common\assettocorsa
 
