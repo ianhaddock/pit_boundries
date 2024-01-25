@@ -71,4 +71,11 @@ Path selected: C:\PROGRA~2\Steam\steamapps\common\assettocorsa
 Proceed (Y/[N])?
 ```
 
+### Notes
+
+The SimViewTool.exe tool may crash when parsing tracks. When this happens the script will immediately move on to creating badge images without requiring you to press enter. To get around this look in the simview_cache/tracks directory and find the last completed track .pb file. In your Assetto Corsa tracks directory remove the track after the last .pb file created and re-run the script. 
+
+Tracks that fail for me:
+* jr_road_atlanta_2022
+
 [1]:https://www.racedepartment.com/downloads/simview.35249/
