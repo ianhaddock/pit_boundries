@@ -78,4 +78,11 @@ The SimViewTool.exe tool may crash when parsing tracks. When this happens the sc
 Tracks that fail for me:
 * jr_road_atlanta_2022
 
+### Support:
+If you found this useful or would like to support projects like this you can buy me a coffee:
+
+<p align="center">
+<a href="https://www.buymeacoffee.com/ianhaddock" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px; width: 174px;" ></a>
+</p>
+
 [1]:https://www.racedepartment.com/downloads/simview.35249/
